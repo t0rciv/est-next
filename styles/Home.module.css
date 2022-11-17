@@ -1,8 +1,12 @@
+.main {
+  background: url("/images/back.jpeg");
+  background-size: contain;
+  background-position: right;
+  height: 60vh;
+}
+
 .title {
   color: antiquewhite;
-  background-image: url("/images/pattern.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
+  padding: 1em;
   margin-bottom: 20px;
 }

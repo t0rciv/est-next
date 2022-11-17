@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Todos.module.css";
 
@@ -13,10 +14,18 @@ export async function getStaticProps() {
 export default function Todos({ todos }) {
   return (
     <>
-      <h1> Tarefas para fazer:</h1>
+      <Head>
+        <title>Tarefas</title>
+      </Head>
+      <h1> Tarefas a fazer</h1>
       <ul className={styles.todoList}>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
+          <li key={todo.id}>
+            {todo.title} -{" "}
+            <Link href={`/todos/${todo.id}`}>
+              <a>Ver mais</a>
+            </Link>
+          </li>
         ))}
       </ul>
       <Link href="/">
